@@ -1,0 +1,31 @@
+######################
+# Eclipse
+###################### 
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties 
+.classpath
+.settings/
+.loadpath
+.eclipse
+/build/
+*.tern-project
+
+# Maven
+target/
+
+# Server
+Servers/
+
+# OS Files #
+.DS_Store
+.svn
+.Trashes
+/.recommenders/

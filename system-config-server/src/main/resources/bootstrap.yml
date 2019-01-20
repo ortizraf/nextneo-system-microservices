@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: nextneo-microservices-config-server
