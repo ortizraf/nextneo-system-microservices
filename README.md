@@ -39,6 +39,19 @@ Spring Cloud Sleuth implements a distributed tracing solution for Spring Cloud, 
 - MySQL 8
 
 
+## How to run
+
+1- Up Config Server Application
+2- Up Eureka Server Application
+3- Up Zuul Gateway Application
+4- Up the other services application
+
+#### Examples 
+http://localhost:9091/
+http://localhost:8100/currency-exchange/from/USD/to/BRL
+http://localhost:8765/nextneo-system-currency/currency-exchange/from/USD/to/BRL
+
+
 ## Info
 ### Services
 

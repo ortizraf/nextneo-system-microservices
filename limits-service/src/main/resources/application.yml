@@ -1,0 +1,6 @@
+server:
+  port: 9595
+
+limits-service:
+  minimum: 2
+  maximum: 998
