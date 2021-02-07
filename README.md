@@ -47,10 +47,12 @@ Spring Cloud Sleuth implements a distributed tracing solution for Spring Cloud, 
 4- Up the other services application
 
 #### Examples 
-http://localhost:9091/
-http://localhost:8100/currency-exchange/from/USD/to/BRL
-http://localhost:8765/nextneo-system-currency/currency-exchange/from/USD/to/BRL
 
+Config Server
+http://localhost:8888/nextneo-limits-service/default
+
+Nextneo Limits Service
+http://localhost:9595/limits
 
 ## Info
 ### Services

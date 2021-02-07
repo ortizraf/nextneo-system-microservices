@@ -1,6 +1,12 @@
 server:
   port: 9595
 
+spring:
+    application:
+        name: nextneo-limits-service
+    config:
+        import: optional:configserver:http://localhost:8888
+
 limits-service:
   minimum: 2
   maximum: 998
