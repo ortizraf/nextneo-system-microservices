@@ -1,9 +1,9 @@
 server:
-  port: 9595
+  port: 8000
 
 spring:
     application:
-        name: nextneo-limits-service
+        name: nextneo-currency-exchange-service
     config:
         import: optional:configserver:http://localhost:8888
     profiles:
@@ -11,7 +11,3 @@ spring:
     cloud:
         config:
             profile: dev
-
-limits-service:
-  minimum: 2
-  maximum: 998
