@@ -1,0 +1,13 @@
+server:
+  port: 8100
+
+spring:
+    application:
+        name: nextneo-currency-conversion-service
+    config:
+        import: optional:configserver:http://localhost:8888
+    profiles:
+        active: dev
+    cloud:
+        config:
+            profile: dev
