@@ -12,7 +12,7 @@
 	<artifactId>limits-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>limits-service</name>
-	<description>Demo project for Spring Boot Centralized Configuration</description>
+	<description>Centralized Configuration</description>
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2020.0.0</spring-cloud.version>
@@ -29,6 +29,19 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit</artifactId>
 		</dependency>
 
 		<dependency>

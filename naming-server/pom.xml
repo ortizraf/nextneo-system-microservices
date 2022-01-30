@@ -12,7 +12,7 @@
 	<artifactId>naming-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>naming-server</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Naming Server Application</description>
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2020.0.1</spring-cloud.version>

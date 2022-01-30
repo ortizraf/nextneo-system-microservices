@@ -18,6 +18,10 @@ spring:
     h2:
         console:
             enabled: true
+    sleuth:
+        sampler:
+            #1.0 -> tracking = 100% 0.2 -> tracking 20% transactions
+            probability: 1.0
 
 eureka:
     client:

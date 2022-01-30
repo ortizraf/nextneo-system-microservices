@@ -54,8 +54,22 @@ Spring Cloud Sleuth implements a distributed tracing solution for Spring Cloud, 
 Config Server
 http://localhost:8888/nextneo-limits-service/default
 
+Naming Server Application (Eureka Server) 
+http://localhost:8761/
+
 Nextneo Limits Service
 http://localhost:9595/limits
+
+Nextneo Currency Conversion Service
+http://localhost:8100/currency-conversion/from/USD/to/BRL/quantity/10
+
+Nextneo Currency Exchange Service
+http://localhost:8000/currency-exchange/from/USD/to/BRL
+
+Services with API Gateway
+http://localhost:8765/currency-exchange/from/USD/to/BRL
+http://localhost:8765/currency-conversion/from/USD/to/BRL/quantity/10
+http://localhost:8765/currency-conversion-feign/from/USD/to/BRL/quantity/16
 
 ## Info
 ### Services
