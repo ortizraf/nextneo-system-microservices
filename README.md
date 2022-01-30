@@ -46,7 +46,7 @@ Spring Cloud Sleuth implements a distributed tracing solution for Spring Cloud, 
 
 1- Up Config Server Application
 2- Up Eureka Server Application
-3- Up Zuul Gateway Application
+3- Up API Gateway Application
 4- Up the other services application
 
 #### Examples 
