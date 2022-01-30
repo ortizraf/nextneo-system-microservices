@@ -13,13 +13,13 @@ Centralized external configuration management backed by a git repository. <a hre
 
 Eureka is a REST (Representational State Transfer) based service that is primarily used in the AWS cloud for locating services for the purpose of load balancing and failover of middle-tier servers.
 
-#### Zuul API Gateway
+#### Spring Cloud Gateway
 
-Zuul acts as an API gateway or Edge service. It receives all the requests coming from the UI and then delegates the requests to internal microservices.
+Spring Cloud Gateway aims to provide a simple, yet effective way to route to APIs and provide cross cutting concerns to them such as: security, monitoring/metrics, and resiliency.
 
-#### Ribbon
+#### Spring Cloud LoadBalancer
 
-Ribbon is a Inter Process Communication (remote procedure calls) library with built in software load balancers.
+Spring Cloud Loadbalancer is a generic abstraction that can do the work that we used to do with Netflix’s Ribbon project. Spring Cloud still supports Netflix Ribbon, but Netflix Ribbons days are numbered, like so much else of the Netflix microservices stack, so we’ve provided an abstraction to support an alternative.
 
 #### Feign
 
