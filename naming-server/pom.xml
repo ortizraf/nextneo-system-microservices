@@ -14,7 +14,7 @@
 	<name>naming-server</name>
 	<description>Naming Server Application</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 		<spring-cloud.version>2020.0.1</spring-cloud.version>
 	</properties>
 	<dependencies>
@@ -60,6 +60,12 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>ortizraf/microservices-${project.artifactId}:${project.version}</name>
+					</image>
+					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
