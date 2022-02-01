@@ -10,8 +10,50 @@ services:
         - currency-network
       depends_on:
         - naming-server
+        - rabbitmq
       environment:
         EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+        SPRING.ZIPKIN.BASEURL: http://zipkin-server:9411
+        RABBIT_URI: amqp://guest:guest@rabbitmq:5672
+        SPRING_RABBITMQ_HOST: rabbitmq
+        SPRING_ZIPKIN_SENDER_TYPE: rabbit
+      restart: always  
+    
+    currency-conversion: 
+      image: ortizraf/microservices-currency-conversion-service:0.0.1-SNAPSHOT
+      mem_limit: 700m
+      ports:
+        - "8100:8100"
+      networks:
+        - currency-network
+      depends_on:
+        - naming-server
+        - rabbitmq
+      environment:
+        EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+        SPRING.ZIPKIN.BASEURL: http://zipkin-server:9411
+        RABBIT_URI: amqp://guest:guest@rabbitmq:5672
+        SPRING_RABBITMQ_HOST: rabbitmq
+        SPRING_ZIPKIN_SENDER_TYPE: rabbit
+      restart: always
+
+    api-gateway: 
+      image: ortizraf/microservices-api-gateway:0.0.1-SNAPSHOT
+      mem_limit: 700m
+      ports:
+        - "8765:8765"
+      networks:
+        - currency-network
+      depends_on:
+        - naming-server
+        - rabbitmq
+      environment:
+        EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+        SPRING.ZIPKIN.BASEURL: http://zipkin-server:9411
+        RABBIT_URI: amqp://guest:guest@rabbitmq:5672
+        SPRING_RABBITMQ_HOST: rabbitmq
+        SPRING_ZIPKIN_SENDER_TYPE: rabbit
+      restart: always
 
     naming-server: 
       image: ortizraf/microservices-naming-server:0.0.1-SNAPSHOT
@@ -20,6 +62,30 @@ services:
         - "8761:8761"
       networks:
         - currency-network
+      restart: always
+
+    zipkin-server:
+      image: openzipkin/zipkin:2.23
+      mem_limit: 300m
+      ports:
+        - "9411:9411"
+      networks:
+        - currency-network
+      environment:
+        RABBIT_URI: amqp://guest:guest@rabbitmq:5672
+      depends_on:
+        - rabbitmq
+      restart: always
+
+    rabbitmq:
+      image: rabbitmq:3.9-management
+      mem_limit: 300m
+      ports:
+        - "5672:5672"
+        - "15672:15672"
+      networks:
+        - currency-network
+      restart: always
 
 networks:
     currency-network:
