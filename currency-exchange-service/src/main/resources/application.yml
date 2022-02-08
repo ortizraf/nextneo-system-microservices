@@ -4,8 +4,6 @@ server:
 spring:
     application:
         name: nextneo-currency-exchange-service
-    config:
-        import: optional:configserver:http://localhost:8888
     profiles:
         active: dev
     cloud:
@@ -35,3 +33,13 @@ resilience4j.retry:
             waitDuration: 1s
             enableExponentialBackoff: true
             exponentialBackoffMultiplier: 2
+            
+management:
+    endpoint:
+        health:
+            probes:
+                enabled: true
+            livenessState:
+                enabled: true
+            readinessState:
+                enabled: true 
